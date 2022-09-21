@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" rel="stylesheet">
+    <script crossorigin="anonymous"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
+
+    <title>Tank</title><img height="1700" src="js/326959.png" style="position: absolute;" width="2720"/>
+    <style>
+        body {
+            background: black;
+            margin: 300px;
+            padding: 0px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        canvas {
+            box-shadow: #444444 2px 1px 20px 15px;
+            border-radius: 3%;
+            border: 5px solid forestgreen;
+        }
+
+        .button1 {
+            background: #FFFF00;
+            width: 80px;
+            font-size: 4px;
+            height: 60px;
+            position: absolute;
+            margin-top: 700px;
+            margin-left: -200px;
+            border-radius: 30%;
+            border: lightslategray 6px solid;
+            box-shadow: black 0 10px 10px 20px;
+            font-family: Bahnschrift;
+        }
+
+        .button2 {
+            background: #FFFF00;
+            width: 80px;
+            height: 60px;
+            position: absolute;
+            margin-top: 700px;
+            margin-left: 200px;
+            border-radius: 30%;
+            border: lightslategray 6px solid;
+            box-shadow: black 0 10px 10px 20px;
+            font-family: Bahnschrift;
+        }
+
+        .div1 {
+            font-family: Bahnschrift;
+            font-size: 20px;
+            position: absolute;
+            color: #00CCFF;
+            margin-top: 1000px;
+            margin-left: -400px
+        }
+
+        .div2 {
+            font-family: Bahnschrift;
+            font-size: 20px;
+            position: absolute;
+            color: #FF6600;
+            margin-top: 1000px;
+            margin-left: 420px
+        }
+    </style>
+</head>
+<body onkeydown="onKeyDown(event)">
+<canvas height="600px" id="gameCanvas" style="border:solid 8px #111111; position: relative; background: #222222 "
+        width="600px"></canvas>
+
+<button class="button1" onClick="reLoad()">
+    <svg class="bi bi-arrow-counterclockwise" height="40" viewBox="0 0 16 13" width="40"
+         xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2v1z" fill-rule="evenodd"/>
+        <path d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466z"/>
+    </svg>
+</button>
+<button class="button2" onclick="clearScore()"> Clear Score
+</button>
+<div class="div1">
+    <h2>Tank Blue</h2>
+    <h4>UP = S</h4>
+    <h4>Down = X</h4>
+    <h4>Left = Z</h4>
+    <h4>Right = C </h4>
+    <h4>Fire = Space</h4>
+</div>
+<div class="div2">
+    <h2>Tank Red</h2>
+    <h4>UP = Up</h4>
+    <h4>Down = Down</h4>
+    <h4>Left = Left</h4>
+    <h4>Right = Right </h4>
+    <h4>Fire = Enter</h4>
+</div>
+</body>
+</html>
+<script src="js/constants.js"></script>
+<script src="js/tank.js"></script>
+<script src="js/tank2.js"></script>
+<script src="js/bullet.js"></script>
+<script src="js/bullet2.js"></script>
+<script src="js/gameboard.js"></script>
+<script src="js/index.js"></script>
+<script>
+    var nhacNen = new Audio('./amThanh/nhac.mp3')
+    nhacNen.play()
+</script>
